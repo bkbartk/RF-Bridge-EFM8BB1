@@ -699,12 +699,10 @@ void Bucket_Received(uint16_t duration, bool high_low)
 					// add sync bucket number to data
 					RF_DATA[0] |= ((bucket_count << 4) | ((bucket_sync & 0x8000) >> 8));
 
-					// clear high/low flag
-					bucket_sync &= 0x7FFF;
-
-					RF_DATA_STATUS |= RF_DATA_RECEIVED_MASK;
 				}
-
+				// clear high/low flag
+				bucket_sync &= 0x7FFF;
+				RF_DATA_STATUS |= RF_DATA_RECEIVED_MASK;
 				LED = LED_OFF;
 				rf_state = RF_IDLE;
 			}
