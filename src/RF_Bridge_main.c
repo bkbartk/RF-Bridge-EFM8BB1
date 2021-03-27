@@ -256,8 +256,9 @@ int main (void)
 
 				// wait and check for UART_SYNC_END
 				case SYNC_FINISH:
-					if ((rxdata & 0xFF) == RF_CODE_STOP)
-					{
+					//BK: Disabled to check missing end issue
+					//if ((rxdata & 0xFF) == RF_CODE_STOP)
+					//{
 						uart_state = IDLE;
 						ReadUARTData = false;
 
@@ -287,7 +288,7 @@ int main (void)
 								break;
 #endif
 						}
-					}
+					//}
 					break;
 			}
 		}
