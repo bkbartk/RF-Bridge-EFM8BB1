@@ -20,11 +20,11 @@ def parse_file(fn):
                     const = data[4].split('=')[1]
                     code = data[5].split('=')[1]
                     if (int(const, 10) + int(code, 10)) > options.size:
-                        print 'Check_Size: Error!'
-                        print 'Check_Size: Data of ' + str(int(const, 10) + int(code, 10)) + ' will not fit into ' + str(options.size) + ' byte'
+                        print ('Check_Size: Error!')
+                        print ('Check_Size: Data of ' + str(int(const, 10) + int(code, 10)) + ' will not fit into ' + str(options.size) + ' byte')
                         exit(1)
-                    print 'Check_Size: Data of ' + str(int(const, 10) + int(code, 10)) + ' will fit into ' + str(options.size) + ' byte'
-                    print 'Check_Size: ' + str(options.size - (int(const, 10) + int(code, 10))) + ' bytes are left'
+                    print ('Check_Size: Data of ' + str(int(const, 10) + int(code, 10)) + ' will fit into ' + str(options.size) + ' byte')
+                    print ('Check_Size: ' + str(options.size - (int(const, 10) + int(code, 10))) + ' bytes are left')
                     exit(0)
 
 usage = "usage: %prog [options]"
